@@ -260,7 +260,7 @@ void gpio_first_edge() {
 void init_timer() {
     /* We assign and enable divier to the clock for TCPWM so that it can
      * function */
-    Cy_SysClk_PeriphEnableDivider(CY_SYSCLK_DIV_16_BIT, 0U);
+    Cy_SysClk_PeriphDisableDivider(CY_SYSCLK_DIV_16_BIT, TCPWM_DIV_NUM);
     Cy_SysClk_PeriphAssignDivider(TCPWM_CLOCK, CY_SYSCLK_DIV_16_BIT,
                                   TCPWM_DIV_NUM);
     Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_16_BIT, TCPWM_DIV_NUM,
